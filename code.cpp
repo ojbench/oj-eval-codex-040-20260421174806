@@ -99,16 +99,36 @@ int main(){
 
     DoublyLinkedList<long long> lst;
     int q; if(!(std::cin>>q)) return 0;
-    while(q--){
-        std::string op; std::cin>>op;
-        if(op==push_front){ long long x; std::cin>>x; lst.push_front(x); }
-        else if(op==push_back){ long long x; std::cin>>x; lst.push_back(x); }
-        else if(op==pop_front){ auto v=lst.pop_front(); if(v) std::cout<<*v<<n; else std::cout<<EMPTYn; }
-        else if(op==pop_back){ auto v=lst.pop_back(); if(v) std::cout<<*v<<n; else std::cout<<EMPTYn; }
-        else if(op==size){ std::cout<<lst.size()<<n; }
-        else if(op==empty){ std::cout<<(lst.empty()?YES:NO)<<n; }
-        else if(op==iter){ bool first=true; for(auto it=lst.begin(); it!=lst.end(); it++){ if(!first) std::cout<<' '; first=false; std::cout<<*it; } std::cout<<n; }
-        else { std::string line; std::getline(std::cin,line); }
+    while (q--) {
+        std::string op;
+        std::cin >> op;
+        if (op == push_front) {
+            long long x; std::cin >> x; lst.push_front(x);
+        } else if (op == push_back) {
+            long long x; std::cin >> x; lst.push_back(x);
+        } else if (op == pop_front) {
+            auto v = lst.pop_front();
+            if (v) std::cout << *v << n;
+            else std::cout << EMPTYn;
+        } else if (op == pop_back) {
+            auto v = lst.pop_back();
+            if (v) std::cout << *v << n;
+            else std::cout << EMPTYn;
+        } else if (op == size) {
+            std::cout << lst.size() << n;
+        } else if (op == empty) {
+            std::cout << (lst.empty() ? YES : NO) << n;
+        } else if (op == iter) {
+            bool first = true;
+            for (auto it = lst.begin(); it != lst.end(); it++) {
+                if (!first) std::cout << ' ';
+                first = false;
+                std::cout << *it;
+            }
+            std::cout << n;
+        } else {
+            std::string line; std::getline(std::cin, line);
+        }
     }
     return 0;
 }
